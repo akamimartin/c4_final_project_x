@@ -6,7 +6,7 @@
      font-size: 40px;
       }
 
- .book1{
+ #book_button1{
    margin-top: 20px;
    float:left;
    height: 200px;
@@ -90,4 +90,18 @@
 h1 {
     color: black;
     font-size: 20px;
+    margin-bottom:20px;
+}
+
+p {
+font-size: 20px;
+color:black;
+font-family: "Trebuchet MS", Helvetica, sans-serif; 
+
+
+}
+
+.txt-con:hover{
+  background-color: #ccc;
+  cursor:pointer;
 }
