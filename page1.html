@@ -2,11 +2,12 @@
 <html lang="en">
 
 <head>
-    <meta charset="utf-8">
+    <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1, maximum-scale=1, user-scalable=no">
     <title>Scary Cave</title>
     <link rel="stylesheet" href="http://maxcdn.bootstrapcdn.com/bootstrap/3.3.4/css/bootstrap.min.css">
-    <script src="http://ajax.googleapis.com/ajax/libs/jquery/2.1.3/jquery.min.js"></script>
+    
+     <script src="http://ajax.googleapis.com/ajax/libs/jquery/1.10.2/jquery.min.js"></script>
     <script src="http://maxcdn.bootstrapcdn.com/bootstrap/3.3.4/js/bootstrap.min.js"></script>
     <link rel="stylesheet" type="text/css" href="style.css">
     <link rel="stylesheet" type="text/css" href="http://fonts.googleapis.com/css?family=Tangerine">
@@ -43,7 +44,30 @@
      <h1 id="title1">The Scary Cave</h1>
    </div>
 
- 
+  <div class = "input-container">
+    <input type="text" name="text"> 
+    <a href="#" class="say">Say it!</a>
+    <audio src="" class ="speech" hidden></audio>
+  </div>
+ <script>
+    $(function() {
+      console.log("inside function for audio")
+      $('a.say').on('click',function(e){
+        e.preventDefault();
+        var text = $('input[name="text"]').val();
+        console.log("text before encode:", text);
+        text = encodeURIComponent(text);
+        console.log("text after encode:", text);
+        var url="https://translate.google.com/translate_tts?ie=UTF-&&q=" + text + "&tl=en";
+        console.log("url:" , url);
+        $('audio').attr('src',url).get(0).play();
+
+
+      });
+    });
+
+
+ </script>
    <div class = "container book1page col-sm-12 content">
       <p>Hey Jade, you got everything?" My mom baked us cake and made ham sandwiches, "said Sade, holding up a big paper bag. "Did you bring the rake, tape and the shovel."
        "YUP", said Jade, a tall skinny boy with red hair.  Sade looked at Jade's small shovel and the old rake that seem to be missing teeth at the end. 
@@ -59,7 +83,6 @@
 
  </div> 
           
-    
 
 </body>
 
