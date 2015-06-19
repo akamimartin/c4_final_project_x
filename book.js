@@ -10,7 +10,7 @@ function book1() {
 
 
 $(document).ready(function() {
-    console.log('page is loading');
+    console.log('page is loading after document ready');
 
     	var paragraphs = $('.content').find('p');
 
@@ -25,14 +25,29 @@ $(document).ready(function() {
 
 	    	console.log("textArr : ", textArr);
 
-	    	var newTextElements = '<span class="txt-con"> '+textArr.join('</span><span class="txt-con"> ')+'</span>';
+	    	var newTextElements = '<span class="txt-con"> '
+                  +textArr.join('</span><span class="txt-con"> ')+'</span>';
 
 	    	p.html(newTextElements);
     	});
 
     	$('body').on('click', '.txt-con', function(){
+            console.log("insdie body onclidk");
     		var elm = $(this);
     		var value = elm.html();
+            var msg = new SpeechSynthesisUtterance(value);
+            window.speechSynthesis.speak(msg);
     		console.log("you just clicked on : ", value);
     	});   
+
+
+            $('#arrow_button1').on('click',  function(){
+                 console.log("inside the arrow onclick");
+                 $('#myModal').modal('show')
+
+                  $('input[type=radio]').click(function() {
+                  alert($(this).val());
+                  });  
+
+             });     
 });

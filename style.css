@@ -105,3 +105,28 @@ font-family: "Trebuchet MS", Helvetica, sans-serif;
   background-color: #ccc;
   cursor:pointer;
 }
+
+
+i{
+  background-color:red;
+}
+
+.book1page {
+  border: 1px solid red;
+
+}
+#arrow_button {
+   background-color: #32cd32; 
+   color: white; 
+   font-family: "Trebuchet MS", Helvetica, sans-serif; 
+
+}
+
+ .questions {
+
+     background-color: blue;
+     color: white;
+     height:545px;
+
+ }
+ 
