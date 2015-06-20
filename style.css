@@ -130,3 +130,12 @@ i{
 
  }
  
+  .btn_answer1 {
+      margin-top: 10 px;
+      margin-right: -10px;
+      height: 35px;
+      background-color:#32cd32;
+      color: white;
+      font-family: "Trebuchet MS", Helvetica, sans-serif;
+      border-radius: 16%; 
+ }
