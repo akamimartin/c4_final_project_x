@@ -11,7 +11,9 @@ function book1() {
 
 $(document).ready(function() {
     console.log('page is loading after document ready');
-
+    
+     $('.arrow-content').append('.questions-page1-hide');
+  
     	var paragraphs = $('.content').find('p');
 
     	$.each(paragraphs, function(){
@@ -51,3 +53,11 @@ $(document).ready(function() {
 
              });     
 });
+
+
+          $('#arrow_button1').on("click", function() {
+            $('#questions-page1-hide').remove();
+            $('.arrow-content').append('.questions-page1-show'); 
+        
+
+          });
