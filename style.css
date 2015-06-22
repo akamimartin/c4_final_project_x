@@ -123,15 +123,16 @@ i{
 }
 
  .questions {
-
+     float:right;
      background-color: blue;
      color: white;
      height:545px;
 
+
  }
  
   .btn_answer1 {
-      margin-top: 10 px;
+      margin-top: -45px;
       margin-right: -10px;
       height: 35px;
       background-color:#32cd32;
@@ -140,15 +141,44 @@ i{
       border-radius: 16%; 
  }
 
- #questions-page1-hide {
-    display: none;
+ .hide_form1{
      visibility:  hidden;
+     display: none;
 
 
  }
 
-  .questions-page1-show {
+  .show_form1 {
     visibility: visible;
 
 
  }
+
+ .box {
+  min-height: 100px;
+  height: auto;
+  width: 100px;
+  padding: 10px;
+  border-width: 4px;
+  border-stype: solid;
+  position: absolute;
+ }
+
+ #orange {
+   border-color: orange;
+   left: 50px;
+   top: 100px;
+ }
+
+ #blue { 
+  border-color: blue;
+  left: 250px;
+  top: 120px;
+}
+
+#green {
+   border-color: green;
+   left: 30px;
+   top:350px;
+
+}

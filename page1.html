@@ -20,16 +20,18 @@
      
   <div class="container" id=>
      <div class="row ">
-        <nav class="navbar" id=>
+        <nav class="navbar" >
   
-    <div class="navbar-header">
-      <button type="button" class="navbar-toggle" data-toggle="collapse" data-target="#myNavbar">
-        <span class="icon-bar"></span>
-        <span class="icon-bar"></span>
-        <span class="icon-bar"></span> 
-      </button>
+        <div class="navbar-header">
+           <button type="button" class="navbar-toggle" data-toggle="collapse" data-target="#myNavbar">
+              <span class="icon-bar"></span>
+              <span class="icon-bar"></span>
+              <span class="icon-bar"></span> 
+           </button>
+
+         </div>
    
-    </div>
+    
        <div class="collapse navbar-collapse" id="myNavbar">
           <ul class="nav navbar-nav navbar-right">
             <li class="active"><a href="index.html">HOME</a></li>
@@ -38,8 +40,10 @@
             <li><a href="contact.html">CONTACT</a></li> 
          </ul>
        </div>
-  </div>
-   
+       
+     </nav>
+ </div>
+
    <div class= "col-sm-12"
      <h1 id="title1">The Scary Cave</h1>
    </div>
@@ -59,71 +63,76 @@
              <span class="glyphicon glyphicon-arrow-right" aria-hidden="true"></span> Next </button>
       </div> 
           
-  <div class = "container   col-sm-3 arrow-content" id="questions-page1-hide"> 
+  <div class = "container form_container1   form1 col-sm-3 " id="form1"  > 
       <form action="action_page.php">
-          <label>1.  What did Sade draw?</label>
-          <br>
-          <input type="radio" name="answer1" value="dog" >dog
+          <label>1.  What did Sade draw? </label>
+              <br>
+              <input type="radio" name="answer1" value="dog" >dog
          
-          <input type="radio" name="answer1" value="map">map
+              <input type="radio" name="answer1" value="map">map
           
-          <input type="radio" name="answer1" value="flowers">flowers
-          <br>  
-         <label>2.  What did Jade carry?</label>
-          <br>
-          <input type="radio" name="answer2" value="broom" >broom
+              <input type="radio" name="answer1" value="flowers">flowers
+              <br> <br> 
+         <label>2.  What did Jade carry when he was walking?  </label>
+              <br>  
+              <input type="radio" name="answer2" value="broom" >broom
            
-          <input type="radio" name="answer2" value="shovel and rake">shovel and rake
+              <input type="radio" name="answer2" value="shovel and rake">shovel and rake
            
-          <input type="radio" name="answer2" value="flashlight">flashlight
-          <br>  
+              <input type="radio" name="answer2" value="flashlight">flashlight
+              <br> <br>  
           <label>3.  Did Jake and Sade eat under a ficus tree?</label>
-          <br>
-          <input type="radio" name="answer3" value="yes" >yes
+              <br>
+              <input type="radio" name="answer3" value="yes" >yes
           
-          <input type="radio" name="answer3" value="no">no
+              <input type="radio" name="answer3" value="no">no
            
          
-          <br> <br>
-          <label>4.  Was the moaning shrill or low?</label>
-          <br>
-          <input type="radio" name="answer4" value="shrill" >shrill
+              <br>  <br> 
+          <label>4.  Was the moaning shrill or low?  </label>
+              <br>   
+              <input type="radio" name="answer4" value="shrill" >shrill
            
-          <input type="radio" name="answer4" value="low">low
+              <input type="radio" name="answer4" value="low">low
 
-          <br> <br>
-          <label>5.  Where was Jade's mom?</label>
-          <br>
-           
-          <input type="radio" name="answer5" value="England" >England
+              <br> <br>  
+          <label>5.  Where was Jade's mom?                  </label>
+              <br> 
+              <input type="radio" name="answer5" value="England" >England
           
-          <input type="radio" name="answer5" value="New York">New York
+              <input type="radio" name="answer5" value="New York">New York
         
-          <input type="radio" name="answer5" value="Cape Town">Cape Town
-           <br>  
-          <label>6. Was Sade tall?</label></label>
-          <br>
+              <input type="radio" name="answer5" value="Cape Town">Cape Town
+              <br>  <br>
+          <label>6. Did Sade have red hair?  </label> 
+              <br>
            
-          <input type="radio" name="answer5" value="no" >no
+              <input type="radio" name="answer5" value="no" >no
           
-          <input type="radio" name="answer5" value="yes">yes
-         <br>  
-          <br>  
-          <label>7. What did Jade use to kill the Snake with?</label></label>
-          <br>
+              <input type="radio" name="answer5" value="yes">yes
+              <br> <br> 
+            
+          <label>7. What did Jade use to kill the Snake with?</label> 
+              <br>
            
-          <input type="radio" name="answer7" value="rake" >rake
+              <input type="radio" name="answer7" value="rake" >rake
           
-          <input type="radio" name="answer7" value="broom">broom
-            <input type="radio" name="answer7" value="shovel">shovel
-         <br> <br> <br>
-          <input type="submit" class = "btn_answer1 pull-right">
+              <input type="radio" name="answer7" value="broom">broom
+              <input type="radio" name="answer7" value="shovel">shovel
+              <br> <br> <br>
+         <input type="submit" class = "btn_answer1 pull-right">
 
       </form> 
           
    </div>
  </div>
-
+ 
+<h1> drag and drop game</h1>
+ <?php $colours = array('orange','blue', 'green','red');
+  foreach ($colours as $colour) {
+       echo "\t\t<div class='box' id '". $colour. "'>\n" .
+        $display->box($colour). "\t\t</div>\n";
+        } ?>
 
 
 

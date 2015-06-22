@@ -52,13 +52,28 @@ $(document).ready(function() {
          
             });  
 
+           $('.box').droppable({
+             drop: function(event, ui) {
+                  var id = $(ui.draggable).attr('id');
+                  var toy = $(ui.draggable).attr('html');
+                  var box = $(this).attr('id');
+                  $.ajax({
+                       url: 'ajax/dragndrop.ajax.php',
+                       type: 'GET',
+                       data: {
+                          'id' : id,
+                          'box' : box
+                       },
+                  });
+              }
+          });
 
-            $('.box div')       
  });  
 
             
  
 
+ 
  
 public function box($colour) {
      $output = "";
@@ -72,5 +87,4 @@ public function box($colour) {
     }
       return $output;
 }
-
 
