@@ -1,11 +1,15 @@
 
 $(document).ready(function(){
-    $('.box').droppable({
+    $('.box').draggable({
+    	 helper: 'clone'
+    	});
 
-             drop: function(event, ui) {
+
+      $('.box').droppable({
+      	     drop: function(event, ui) {
               tolerance: 'touch',
                   var id = $(ui.draggable).attr('id');
-                  var toy = $(ui.draggable).html();
+                  var name = $(ui.draggable).html();
                   var box = $(this).attr('id');
                   $.ajax({
                        url: 'dragndrop.ajax.php',

@@ -182,3 +182,33 @@ i{
    top:350px;
 
 }
+ul {
+  width: 100px;
+  padding: 0px;
+  list-style: none;
+
+}
+
+$list {
+   width: 120px;
+   height: 180px;
+   background-color: #fofofo;
+   border: 1px solid #000;
+   /*overflow: auto; */
+   min-height:  auto ;
+ }
+
+   
+ #list.border {
+   border-width: 2px;
+ }
+
+
+ .page1-box {
+   margin-top:600px;
+   margin-left: 15px;
+   height:  200px;
+   width: 830px;
+   border: solid 2px red;
+
+ }

@@ -1,7 +1,11 @@
  
-public function box($colour) {
+ <?php
+
+  /*$this->db = $db;
+
+ public function box($colour) {
      $output = "";
-    $stmt = $this->db->prepare('SELECT * FROM mini_game_results')
+    $stmt = $this->db->prepare('SELECT * FROM mini_game_results where box = :colour');
     $stmt->bindParam(':colour', $colour);
     $stmt->execute();
 
@@ -10,4 +14,6 @@ public function box($colour) {
        "</div>\n";
     }
       return $output;
-}
+} */
+
+?>

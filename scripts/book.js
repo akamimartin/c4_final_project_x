@@ -4,7 +4,7 @@ function book1() {
 }
 
 
-
+var wordx = ''
 
 
 
@@ -12,6 +12,7 @@ function book1() {
 $(document).ready(function() {
     console.log('page is loading after document ready');
       $("#form1").hide();
+      $("#drop-box").hide();
      
       // $('.form_container1').addClass('.form1'); 
  
@@ -42,6 +43,7 @@ $(document).ready(function() {
             var msg = new SpeechSynthesisUtterance(value);
             window.speechSynthesis.speak(msg);
     		console.log("you just clicked on : ", value);
+        wordx =value;
     	});   
  
             $('#arrow_button1').on('click',  function(){
@@ -49,24 +51,95 @@ $(document).ready(function() {
                $("#form1").show();
                $('.form_container1').addClass('questions'); 
                  console.log("inside the arrow onclick");
+               $("#drop-box").show();
+               $('.box-container1').addClass('page1-box');   
          
+               
+              /*   $('span').draggable({
+                    helper: 'clone',
+                    stop: function(event, ui){
+                      console.log("ui =",ui.helper[0]);
+                      var new_element = $(ui.helper[0]).cl
+                      one();
+                      $("#drop-box").append(new_element);
+                    },
+                  });
+                  
+                 $('#drop-box').droppable({
+                  //helper: 'clone'
+                 }) */
+
+  $(function () {
+    var html = "<h1>In transit</h1>";
+        $('span').draggable({
+            containment: 'document',
+            helper: 'clone'//function(){ return $(html); }
+        });
+    $("#drop-box").droppable({
+        drop: function (event, ui) {
+            $(ui.draggable).clone().appendTo(this);
+            //$(ui.draggable).remove();
+        }
+    });
+});
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+       
+                /*  $('#drop-box').droppable();  
+                 $( "#droppable-2" ).droppable({
+            drop: function( event, ui ) {
+               $( this )
+               .addClass( "ui-state-highlight" )
+               .find( "p" )
+               .html( "Dropped!" );
+            }
+         });
+
+
+               /*$('li').draggable({
+                    containment:'document', 
+                    revert: true,
+                    start: function(){
+                         list_contents = $(list).text();
+                    },
+                });
+          
+                $('#list').droppable({ 
+                    hoverClass: 'border', 
+                    accept: '.item',
+                    drop: function() {
+                      alert('dropped', list_contents);
+                      $('#list').append(list_contents, '<br>');
+                    }
+                });  */
+
+
+
+
+
+
+
+
             });  
 
-           $('.box').droppable({
-             drop: function(event, ui) {
-                  var id = $(ui.draggable).attr('id');
-                  var toy = $(ui.draggable).attr('html');
-                  var box = $(this).attr('id');
-                  $.ajax({
-                       url: 'ajax/dragndrop.ajax.php',
-                       type: 'GET',
-                       data: {
-                          'id' : id,
-                          'box' : box
-                       },
-                  });
-              }
-          });
+
+
+
 
  });  
 
@@ -74,17 +147,5 @@ $(document).ready(function() {
  
 
  
- 
-public function box($colour) {
-     $output = "";
-    $stmt = $this->db->prepare('SELECT * FROM mini_game_results')
-    $stmt->bindParam(':colour', $colour);
-    $stmt->execute();
 
-    while($row = $stmt->fetch(PDO::FETCH_ASSOC))  {
-      $output .= "\t\t\t<div id='".$row["id"]."'>". $row["name"].
-       "</div>\n";
-    }
-      return $output;
-}
 

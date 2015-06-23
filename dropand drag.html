@@ -1,0 +1,12 @@
+<?php
+require_once '../php-includes/connect.inc.php';
+$id = $_GET['id'];
+$box = $_GET['box'];
+
+$stmt = $db->prepare("UPDATE mini_game_results 	SET box = :box WHERE ID = :id");
+$stmt->bindParam(':id',$id);
+$stmt->bindParam(':box', $box);
+$stmt->execute();
+?>
+
+ 
