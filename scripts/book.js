@@ -69,7 +69,7 @@ $(document).ready(function() {
                   //helper: 'clone'
                  }) */
  
-    /*           var html = "<h1>In transit</h1>";
+               var html = "<h1>In transit</h1>";
                $('span').draggable({
                   containment: 'document',
                   helper: 'clone'//function(){ return $(html); }
@@ -79,7 +79,7 @@ $(document).ready(function() {
                   $(ui.draggable).clone().appendTo(this);
             //$(ui.draggable).remove();
                    }
-    });    */
+    });     
 
 
 
@@ -100,8 +100,7 @@ $(document).ready(function() {
             }
          });
 
-
-               /*$('li').draggable({
+                    $('li').draggable({
                     containment:'document', 
                     revert: true,
                     start: function(){
