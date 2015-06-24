@@ -48,11 +48,11 @@ $(document).ready(function() {
  
             $('#arrow_button1').on('click',  function(){
               //$('.form_container1').removeClass('.hide_form1'); 
-               $("#form1").show();
-               $('.form_container1').addClass('questions'); 
-                 console.log("inside the arrow onclick");
-               $("#drop-box").show();
-               $('.box-container1').addClass('page1-box');   
+                 $("#form1").show();
+                 $('.form_container1').addClass('questions'); 
+                   console.log("inside the arrow onclick");
+                 $("#drop-box").show();
+                 $('.box-container1').addClass('page1-box');   
          
                
               /*   $('span').draggable({
@@ -68,28 +68,18 @@ $(document).ready(function() {
                  $('#drop-box').droppable({
                   //helper: 'clone'
                  }) */
-
-  $(function () {
-    var html = "<h1>In transit</h1>";
-        $('span').draggable({
-            containment: 'document',
-            helper: 'clone'//function(){ return $(html); }
-        });
-    $("#drop-box").droppable({
-        drop: function (event, ui) {
-            $(ui.draggable).clone().appendTo(this);
+ 
+    /*           var html = "<h1>In transit</h1>";
+               $('span').draggable({
+                  containment: 'document',
+                  helper: 'clone'//function(){ return $(html); }
+              });
+             $("#drop-box").droppable({
+                  drop: function (event, ui) {
+                  $(ui.draggable).clone().appendTo(this);
             //$(ui.draggable).remove();
-        }
-    });
-});
-
-
-
-
-
-
-
-
+                   }
+    });    */
 
 
 
