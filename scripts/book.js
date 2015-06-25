@@ -6,10 +6,113 @@ function book1() {
 
 var wordx = ''
 
+function speaker_object(){
+  this.word_queue = [];
+  this.utterance = null;
+  this.add_word = function(word){
+    //add word to the word queue
+    this.word_queue.push(word);
+    console.log('added word '+word);
+  }
+  this.speak_next_word = function(){
+    //perform the speech of the first word in the word_queue
+    if(this.word_queue.length<1){
+      return;
+    }
+    var word = this.word_queue.shift();
+    console.log("saying "+word);
+    this.utterance = new SpeechSynthesisUtterance(word);
+    var _this = this;
+    this.utterance.onstart = function(event){
+      _this.speak_next_word();
+    }
+    window.speechSynthesis.speak(this.utterance);
+  }
+  this.speak = function(){
+    this.speak_next_word();
+  }
+}
+var janet = new speaker_object();
+
+
+
+
+
+
+
 
 
 
 $(document).ready(function() {
+
+// Set up!
+var a_canvas = document.getElementById("a");
+var context = a_canvas.getContext("2d");
+ 
+// Draw the face
+context.fillStyle = "yellow";
+context.beginPath();
+context.arc(95, 100, 40, 0, 2*Math.PI);
+context.closePath();
+context.fill();
+context.lineWidth = 2;
+context.stroke();
+context.fillStyle = "black";
+ 
+// Draw the left eye
+context.beginPath();
+context.arc(75, 90, 5, 0, 2*Math.PI);
+context.closePath();
+context.fill();
+ 
+ 
+// Draw the right eye
+context.beginPath();
+context.arc(114, 90, 5, 0, 2*Math.PI);
+context.closePath();
+context.fill();
+ 
+// Draw the mouth
+context.beginPath();
+context.arc(95, 105, 26, Math.PI, 2*Math.PI, true);
+context.closePath();
+context.fill();
+ 
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+  //janet.add_word('Welcome to the Scary Cave');
+  janet.speak();
     console.log('page is loading after document ready');
       $("#form1").hide();
       $("#drop-box").hide();
@@ -37,12 +140,12 @@ $(document).ready(function() {
     	});
 
     	$('body').on('click', '.txt-con', function(){
-            console.log("insdie body onclidk");
+            //console.log("insdie body onclidk");
     		var elm = $(this);
     		var value = elm.html();
-            var msg = new SpeechSynthesisUtterance(value);
-            window.speechSynthesis.speak(msg);
-    		console.log("you just clicked on : ", value);
+        janet.add_word(value);
+        janet.speak();
+    		//console.log("you just clicked on : ", value);
         wordx =value;
     	});   
  
@@ -50,7 +153,7 @@ $(document).ready(function() {
               //$('.form_container1').removeClass('.hide_form1'); 
                  $("#form1").show();
                  $('.form_container1').addClass('questions'); 
-                   console.log("inside the arrow onclick");
+                   //console.log("inside the arrow onclick");
                  $("#drop-box").show();
                  $('.box-container1').addClass('page1-box');   
          
@@ -136,5 +239,4 @@ $(document).ready(function() {
  
 
  
-
 

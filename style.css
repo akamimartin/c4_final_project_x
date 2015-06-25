@@ -141,6 +141,22 @@ i{
       border-radius: 16%; 
  }
 
+  .form_button {
+      margin-top: -185px;
+      margin-right: 1px;
+      height: 35px;
+      background-color:#32cd32;
+      color: white;
+      font-family: "Trebuchet MS", Helvetica, sans-serif;
+      border-radius: 16%; 
+ }
+
+
+
+
+
+
+
  .hide_form1{
      visibility:  hidden;
      display: none;
@@ -212,3 +228,13 @@ $list {
    border: solid 2px red;
 
  }
+
+ canvas {
+   border: 1px dotted black;
+   position:absolute;
+   top:0px;
+   bottom:0px;
+   left:0px;
+   right:0px;
+   margin:auto;
+}
