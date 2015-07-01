@@ -46,7 +46,7 @@ var janet = new speaker_object();
 $(document).ready(function() {
 
 // Set up!
-var a_canvas = document.getElementById("a");
+/*var a_canvas = document.getElementById("a");
 var context = a_canvas.getContext("2d");
  
 // Draw the face
@@ -76,7 +76,7 @@ context.fill();
 context.beginPath();
 context.arc(95, 105, 26, Math.PI, 2*Math.PI, true);
 context.closePath();
-context.fill();
+context.fill(); */
  
 
 
@@ -229,7 +229,77 @@ context.fill();
 
             });  
 
+$('.blink').on('click', function () {
+    $('.lidT').animate({
+        top: '-40'
+    }, 500).delay(200).animate({
+        top: '-80'
+    });
+    $('.lidB').animate({
+        bottom: '-40'
+    }, 500).delay(200).animate({
+        bottom: '-80'
+    });
+});
 
+$('.look').on('click', function () {
+    $('.pup').animate({
+        'left': '80'
+    }, 500).delay(200).animate({
+        'left': '0'
+    }, 700).delay(200).animate({
+        left: 40
+    });
+});
+
+$('.both').on('click', function () {
+    $('.lidT').animate({
+        top: '-40'
+    }, 500).delay(200).animate({
+        top: '-80'
+    });
+    $('.lidB').animate({
+        bottom: '-40'
+    }, 500).delay(200).animate({
+        bottom: '-80'
+    });
+    $('.pup').delay(900).animate({
+        'left': '80'
+    }, 500).delay(200).animate({
+        'left': '0'
+    }, 700).delay(200).animate({
+        left: 40
+    });
+});
+
+$('.scared').on('click', function () {
+    $('.lidT').animate({
+        top: '-100'
+    }, 800).delay(200).animate({
+        top: '-40'
+    }, 500).delay(200).animate({
+        top: '-80'
+    });
+    $('.lidB').animate({
+        bottom: '-100'
+    }, 800).delay(200).animate({
+        bottom: '-40'
+    }, 500).delay(200).animate({
+        bottom: '-80'
+    });
+    $('.pup').animate({
+        'height': '50',
+        'width': '50',
+        top: '25',
+        left: '25'
+    }, 500).delay(1000).animate({
+        'height': '20',
+        'width': '20',
+        top: '40',
+        left: '40'
+    });
+    //$('.smile').addClass('rotate');
+});
 
 
 

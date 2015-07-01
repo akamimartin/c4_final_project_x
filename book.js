@@ -53,7 +53,19 @@ $(document).ready(function() {
             });  
 
 
-            $('.box div')       
+            $('.box div') 
+             $(".left-eye").addClass('animated shake');
+           // $(".rightt-eye").addClass('animated shake');
+
+/* <div class="left-eye">
+         <div class="right-eye">
+         <duiv class= "upper-lip">
+         <div class= "lower lip"> 
+           <link rel='stylesheet' href='animate.min.css"> */
+
+
+
+
  });  
 
             
