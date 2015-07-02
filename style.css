@@ -152,7 +152,16 @@ i{
  }
 
 
+#form1 {
+   margin-top: 220px;
 
+}
+
+#drop-box {
+  margin-left: -100px;
+  width: 250px;
+  height: 300px;
+}
 
 
 

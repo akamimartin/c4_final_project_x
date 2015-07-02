@@ -12,7 +12,7 @@ function speaker_object(){
   this.add_word = function(word){
     //add word to the word queue
     this.word_queue.push(word);
-    console.log('added word '+word);
+    console.log('added word ',word);
   }
   this.speak_next_word = function(){
     //perform the speech of the first word in the word_queue
@@ -20,7 +20,7 @@ function speaker_object(){
       return;
     }
     var word = this.word_queue.shift();
-    console.log("saying "+word);
+    console.log("saying ",word);
     this.utterance = new SpeechSynthesisUtterance(word);
     var _this = this;
     this.utterance.onstart = function(event){
@@ -34,92 +34,18 @@ function speaker_object(){
 }
 var janet = new speaker_object();
 
-
-
-
-
-
-
-
-
+  
 
 $(document).ready(function() {
-
-// Set up!
-/*var a_canvas = document.getElementById("a");
-var context = a_canvas.getContext("2d");
- 
-// Draw the face
-context.fillStyle = "yellow";
-context.beginPath();
-context.arc(95, 100, 40, 0, 2*Math.PI);
-context.closePath();
-context.fill();
-context.lineWidth = 2;
-context.stroke();
-context.fillStyle = "black";
- 
-// Draw the left eye
-context.beginPath();
-context.arc(75, 90, 5, 0, 2*Math.PI);
-context.closePath();
-context.fill();
- 
- 
-// Draw the right eye
-context.beginPath();
-context.arc(114, 90, 5, 0, 2*Math.PI);
-context.closePath();
-context.fill();
- 
-// Draw the mouth
-context.beginPath();
-context.arc(95, 105, 26, Math.PI, 2*Math.PI, true);
-context.closePath();
-context.fill(); */
  
 
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-  //janet.add_word('Welcome to the Scary Cave');
-  janet.speak();
+   //janet.add_word('Welcome to the Scary Cave');
+   janet.speak();
     console.log('page is loading after document ready');
       $("#form1").hide();
       $("#drop-box").hide();
      
-      // $('.form_container1').addClass('.form1'); 
- 
-
+    
     
      	var paragraphs = $('.content').find('p');
     	$.each(paragraphs, function(){
@@ -184,46 +110,7 @@ context.fill(); */
                    }
     });     
 
-
-
-
-
-
-
-
-
-       
-                /*  $('#drop-box').droppable();  
-                 $( "#droppable-2" ).droppable({
-            drop: function( event, ui ) {
-               $( this )
-               .addClass( "ui-state-highlight" )
-               .find( "p" )
-               .html( "Dropped!" );
-            }
-         });
-
-                    $('li').draggable({
-                    containment:'document', 
-                    revert: true,
-                    start: function(){
-                         list_contents = $(list).text();
-                    },
-                });
-          
-                $('#list').droppable({ 
-                    hoverClass: 'border', 
-                    accept: '.item',
-                    drop: function() {
-                      alert('dropped', list_contents);
-                      $('#list').append(list_contents, '<br>');
-                    }
-                });  */
-
-
-
-
-
+ 
 
 
 
