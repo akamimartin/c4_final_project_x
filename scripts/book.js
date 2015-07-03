@@ -161,32 +161,51 @@ $('.both').on('click', function () {
 
 $('.scared').on('click', function () {
     $('.lidT').animate({
-        top: '-100'
-    }, 800).delay(200).animate({
-        top: '-40'
-    }, 500).delay(200).animate({
-        top: '-80'
+        top: '-120'
+    }, 600).delay(200).animate({
+        top: '-30'
+    }, 300).delay(200).animate({
+        top: '-120'
     });
     $('.lidB').animate({
-        bottom: '-100'
-    }, 800).delay(200).animate({
+        bottom: '-120'
+    }, 600).delay(200).animate({
         bottom: '-40'
-    }, 500).delay(200).animate({
-        bottom: '-80'
+    }, 300).delay(200).animate({
+        bottom: '-130'
     });
     $('.pup').animate({
-        'height': '50',
-        'width': '50',
-        top: '25',
-        left: '25'
+        'height': '30',
+        'width': '30',
+        top: '10',
+        left: '8'
     }, 500).delay(1000).animate({
         'height': '20',
         'width': '20',
-        top: '40',
-        left: '40'
+        top: '14',
+        left: '16'
     });
     //$('.smile').addClass('rotate');
 });
+
+
+$('.scared').on('click', function () {
+    $('.smile').slideUp(1000).delay(1000).slideDown(1000);
+     
+    })
+
+
+
+
+
+
+
+
+
+
+
+
+
 
 
 
