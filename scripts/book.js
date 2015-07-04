@@ -25,6 +25,8 @@ function speaker_object(){
     var _this = this;
     this.utterance.onstart = function(event){
       _this.speak_next_word();
+       //$('.smile').toggle( "fast", "swing", 1000 );
+       $('.smile').slideUp(300).delay(100).slideDown(300);
     }
     window.speechSynthesis.speak(this.utterance);
   }
@@ -81,9 +83,13 @@ $(document).ready(function() {
                  $('.form_container1').addClass('questions'); 
                    //console.log("inside the arrow onclick");
                  $("#drop-box").show();
-                 $('.box-container1').addClass('page1-box');   
-         
+                 $('.box-container1').addClass('page1-box'); 
+                 $('.face_container').addClass('add_face');
+            
                
+                $(".add_face").fadeIn(3000);
+              //$(".add_face").fadeOut(3000);
+
               /*   $('span').draggable({
                     helper: 'clone',
                     stop: function(event, ui){
@@ -115,6 +121,11 @@ $(document).ready(function() {
 
 
             });  
+
+
+
+
+$(".face_container").fadeOut(3000);
 
 $('.blink').on('click', function () {
     $('.lidT').animate({
@@ -185,12 +196,15 @@ $('.scared').on('click', function () {
         top: '14',
         left: '16'
     });
+    $('.smile').slideToggle(); 
     //$('.smile').addClass('rotate');
 });
 
 
 $('.scared').on('click', function () {
-    $('.smile').slideUp(1000).delay(1000).slideDown(1000);
+    //$('.smile').slideUp(1000).delay(1000).slideDown(1000);
+     $('.smile').slideToggle(); 
+     
      
     })
 

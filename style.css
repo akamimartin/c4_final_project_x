@@ -178,6 +178,10 @@ i{
 
 
  }
+  .add-face {
+   margin-left: 600px;
+
+ }
 
  .box {
   min-height: 100px;
@@ -272,7 +276,7 @@ border-radius:  10px;
 
 
 html {
-    background: w;
+    background: white;
 }
 body {
     margin: 0;
@@ -283,6 +287,15 @@ body {
     position: relative;
     top: .5em;
     margin-left: -140px;
+} 
+#catHolder2 {
+    width: 300px;
+    margin: 0 auto;
+    position: relative;
+    top: .5em;
+    margin-left: 840px;
+
+
 }
 .head {
     height: 100px;
