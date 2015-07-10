@@ -83,11 +83,11 @@ $(document).ready(function() {
                  $('.form_container1').addClass('questions'); 
                    //console.log("inside the arrow onclick");
                  $("#drop-box").show();
-                 $('.box-container1').addClass('page1-box'); 
-                 $('.face_container').addClass('add_face');
+                // $('.box-container1').addClass('page1-box'); 
+                // $('.face_container').addClass('add_face');
             
                
-                $(".add_face").fadeIn(3000);
+               // $(".add_face").fadeIn(3000);
               //$(".add_face").fadeOut(3000);
 
               /*   $('span').draggable({
@@ -125,7 +125,7 @@ $(document).ready(function() {
 
 
 
-$(".face_container").fadeOut(3000);
+//$(".face_container").fadeOut(3000);
 
 $('.blink').on('click', function () {
     $('.lidT').animate({
