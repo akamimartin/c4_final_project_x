@@ -3,60 +3,88 @@
 <head>
   <meta charset="utf-8">
   <title>jQuery UI Droppable - Accept</title>
+    <script type= "text/javascript"
+      src="http://ajax.googleapis.com/ajax/libs/jquery/1.10.2/jquery.min.js">
+    </script>
   <link rel="stylesheet" href="//code.jquery.com/ui/1.11.4/themes/smoothness/jquery-ui.css">
-  <script src="//code.jquery.com/jquery-1.10.2.js"></script>
-  <script src="//code.jquery.com/ui/1.11.4/jquery-ui.js"></script>
-  <link rel="stylesheet" href="/resources/demos/style.css">
-  <style>
-  #droppable { 
-    width: 150px;
-    height: 150px;
-    padding: 0.5em; 
-    float: left; 
-    margin: 10px; }
+   <script src="//code.jquery.com/ui/1.11.4/jquery-ui.js"></script>
 
-  #draggable, #draggable-nonvalid {
-     width: 100px;
-     height: 100px;
-     padding: 0.5em;
-     float: left;
-     margin: 10px 10px 10px 0; }
-  </style>
-  <script>
-  $(function() {
-    $( "#draggable, #draggable-nonvalid" ).draggable();
-    $( "#droppable" ).droppable({
-      accept: "#draggable",
-      activeClass: "ui-state-hover",
-      hoverClass: "ui-state-active",
-      drop: function( event, ui ) {
-        $( this )
-          .addClass( "ui-state-highlight" )
-          .find( "p" )
-            .html( "Dropped!" );
-      }
-    });
-  });
+  <script type="text/javascript" src="scripts/turnjs4/lib/turn.js"></script>
   </script>
+ 
+  <style>
+  body {
+    background: white;
+  }
+  #book {
+    width: 1000px;
+    height: 400px;
+    border: 2px solid green;
+
+  }
+  #book .turn-page {
+      background-color: #ddd;
+      background-size: 100% 100%;
+
+  } 
+  #flipbook {
+    height: 400px;
+    width: 400px;
+    border: 2px solid purple;
+  }
+
+</style> 
+
 </head>
 <body>
- 
-<div id="draggable-nonvalid" class="ui-widget-content">
-  <ul>
-    <li>test1</li>
-    <li>test2</li>
-    <li>test3<
-  <p>I'm draggable but can't be dropped</p>
+
+<div id="book">
+  <div> Page 111 this is page one </div>
+  <div> Page 22222 this is page tweoiujeiueio </div>
+  <div> Page 333333 this is page three kjdkjkdj; </div>
+  <div> Page 4444444 this is page fourjdkjkdjkdj;d;d;kd </div>
+ <!-- <div style="backgorund-image:url('images/5.png');"></div> -->
 </div>
+
+<script>
+  $(window).ready(function() {
+     $('#book').turn({
+        display: 'double',
+        acceleration: true,
+        elevation: 50
+     });
+   });
+
+$(window).bind('keydown', function(e) {
+    If(e.keyCode===37)  
+       $('#book').turn('previous');
+       elseif(e.keyCode===39) 
+       $('#book').turn('next');
+       
+});
  
-<div id="draggable" class="ui-widget-content">
-  <p>Drag me to my target</p>
+</script>
+
+ 
+<div id="flipbook">
+  <div class="hard"> Turn.js </div>
+  <div class="hard"></div>
+  <div> Page 1 </div>
+  <div> Page 2 </div>
+  <div> Page 3 </div>
+  <div> Page 4 </div>
+  <div class="hard"></div>
+  <div class="hard"></div>
 </div>
- 
-<div id="droppable" class="ui-widget-header">
-  <p>accept: '#draggable'</p>
-</div>
- 
+ <script>
+  $("#flipbook").turn({
+    width: 400,
+    height: 300,
+    autoCenter: true
+  }); 
+</script>
+
+
  
 </body>
 </html>

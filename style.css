@@ -29,9 +29,11 @@
 
 #title1 {
     text-align: center;
+    margin-left: -140px;
     color: #32cd32;
      font-family: "Trebuchet MS", Helvetica, sans-serif; 
      font-size: 40px;
+     margin-top: -120px;
       }
 
  #book_button1{
@@ -140,11 +142,14 @@ i{
 }
 
 .book1page {
-  margin-top: 40px;
-  margin-left: 70px;
-  border: 1px solid blue;
-  height: 650px;
-  width:800px;
+  margin-top: -45px;
+  margin-left: 120px;
+  border: 2px solid blue;
+  border-radius: 25px;
+  height: 600px;
+  width:900px;
+  color: blue;
+
 
 }
 #arrow_button {
@@ -314,11 +319,11 @@ body {
     margin: 0;
 }
 .catHolder {
-  margin-top: 40px;
+  margin-top: 10px;
     width: 300px;
     position: relative;
-    top: 10px;
-    margin-left: 180px;
+    top: -50px;
+    margin-left: 240px;
 } 
 #catHolder2 {
     width: 300px;
@@ -498,4 +503,71 @@ body {
     -moz-transform: rotate(180deg);
     -o-transform: rotate(180deg);
     transform: rotate(180deg);
+}
+
+/* ============================================================================================================================
+== OVER THOUGHT BUBBLE, EMPTY, WITH BORDER (more CSS3)
+** ============================================================================================================================ */
+
+.oval-thought-border {
+  position:relative;
+  padding:70px 30px;
+  margin:1em auto 80px;
+  border:10px solid #c81e2b;
+  text-align:center;
+  color:#333;
+  background:#fff;
+  margin-top: -60px;
+  /* css3 */
+  /*
+  NOTES:
+  -webkit-border-radius:240px 140px; // produces oval in safari 4 and chrome 4
+  -webkit-border-radius:240px / 140px; // produces oval in chrome 4 (again!) but not supported in safari 4
+  Not correct application of the current spec, therefore, using longhand to avoid future problems with webkit corrects this
+  */
+  -webkit-border-top-left-radius:240px 140px;
+  -webkit-border-top-right-radius:240px 140px;
+  -webkit-border-bottom-right-radius:240px 140px;
+  -webkit-border-bottom-left-radius:240px 140px;
+  -moz-border-radius:240px / 140px;
+  border-radius:240px / 140px;
+}
+
+/* creates the larger circle */
+.oval-thought-border:before {
+  margin-top:-390px;
+  content:"";
+  position:absolute;
+  z-index:10;
+  bottom:-40px;
+  right:100px;
+  width:50px;
+  height:50px;
+  border:10px solid #c81e2b;
+  background:#fff;
+  /* css3 */
+  -webkit-border-radius:50px;
+  -moz-border-radius:50px;
+  border-radius:50px;
+  /* reduce the damage in FF3.0 */
+  display:block;
+}
+
+/* creates the smaller circle */
+.oval-thought-border:after {
+  content:"";
+  position:absolute;
+  z-index:10;
+  bottom:-60px;
+  right:50px;
+  width:25px;
+  height:25px;
+  border:10px solid #c81e2b;
+  background:#fff;
+  /* css3 */
+  -webkit-border-radius:25px;
+  -moz-border-radius:25px;
+  border-radius:25px;
+  /* reduce the damage in FF3.0 */
+  display:block;
 }

@@ -40,6 +40,49 @@ var janet = new speaker_object();
 
 $(document).ready(function() {
  
+     janet.add_word('Welcome'); 
+     janet.speak();
+janet.add_word('to');
+     janet.speak();
+janet.add_word('the');
+     janet.speak();
+
+janet.add_word('Scary');
+     janet.speak();
+janet.add_word('Cave');
+     janet.speak();
+
+     janet.add_word('This');
+     janet.speak();
+ janet.add_word('story');
+     janet.speak();
+ janet.add_word('has');
+     janet.speak();
+ janet.add_word('a');
+     janet.speak();
+ janet.add_word('lot');
+     janet.speak();
+ janet.add_word('of');
+     janet.speak();
+ janet.add_word('long');
+     janet.speak();
+ janet.add_word('words');
+     janet.speak();
+ janet.add_word('with');
+     janet.speak();
+janet.add_word('the');
+     janet.speak();
+janet.add_word('long');
+     janet.speak();
+janet.add_word('a');
+     janet.speak();
+janet.add_word('sound');
+ 
+
+
+
+
+
 
    //janet.add_word('Welcome to the Scary Cave');
    janet.speak();
