@@ -26,7 +26,7 @@ function speaker_object(){
     this.utterance.onstart = function(event){
       _this.speak_next_word();
        //$('.smile').toggle( "fast", "swing", 1000 );
-       $('.smile').slideUp(300).delay(100).slideDown(300);
+       $('.smile').slideUp(300).delay(200).slideDown(300);
     }
     window.speechSynthesis.speak(this.utterance);
   }
@@ -58,30 +58,39 @@ janet.add_word('Cave');
      janet.speak();
  janet.add_word('has');
      janet.speak();
- janet.add_word('a');
-     janet.speak();
- janet.add_word('lot');
-     janet.speak();
- janet.add_word('of');
-     janet.speak();
- janet.add_word('long');
-     janet.speak();
- janet.add_word('words');
+  janet.add_word('words');
      janet.speak();
  janet.add_word('with');
      janet.speak();
-janet.add_word('the');
+
+
+ janet.add_word('the');
      janet.speak();
-janet.add_word('long');
+ janet.add_word('long');
      janet.speak();
 janet.add_word('a');
      janet.speak();
 janet.add_word('sound');
+     janet.speak();
+janet.add_word('with');
+     janet.speak();
+janet.add_word('a');
  
-
-
-
-
+janet.add_word('at');
+     janet.speak();
+janet.add_word('the');
+     janet.speak();
+janet.add_word('beginning');
+  janet.speak();
+janet.add_word('and');
+     janet.speak();
+janet.add_word('e');
+     janet.speak();
+janet.add_word('at');
+     janet.speak();
+janet.add_word('the');
+     janet.speak();
+janet.add_word('end');
 
 
    //janet.add_word('Welcome to the Scary Cave');
