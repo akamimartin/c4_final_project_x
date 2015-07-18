@@ -26,7 +26,7 @@ function speaker_object(){
     this.utterance.onstart = function(event){
       _this.speak_next_word();
        //$('.smile').toggle( "fast", "swing", 1000 );
-       $('.smile').slideUp(300).delay(200).slideDown(300);
+       $('.smile').slideUp(300).delay(300).slideDown(300);
     }
     window.speechSynthesis.speak(this.utterance);
   }
@@ -34,97 +34,88 @@ function speaker_object(){
     this.speak_next_word();
   }
 }
-var janet = new speaker_object();
+var new_word = new speaker_object();
 
+function scared_look(){
+ $('.lidT').animate({
+        top: '-120'
+    }, 600).delay(200).animate({
+        top: '-30'
+    }, 300).delay(200).animate({
+        top: '-120'
+    });
+    $('.lidB').animate({
+        bottom: '-120'
+    }, 600).delay(200).animate({
+        bottom: '-40'
+    }, 300).delay(200).animate({
+        bottom: '-130'
+    });
+    $('.pup').animate({
+        'height': '30',
+        'width': '30',
+        top: '10',
+        left: '8'
+    }, 500).delay(1000).animate({
+        'height': '20',
+        'width': '20',
+        top: '14',
+        left: '16'
+    });
+   
+};
+
+
+
+ 
+function welcome_msg() {
+  var welcomeMsg = ["well","come","to","the","scare","e","cave","this","store","e","has",
+                    "words","with","the","long","a","sound","with","a",
+                    "at","the","be","gin","ning","and","e","at","the","end", "of","a","word",
+                    "ex","am","ples","of","the","long","a","sound","cake","rake","bake","made"];
+ 
+  var i;
+   for (i = 0; i < welcomeMsg.length; i++) {
+         new_word.add_word(welcomeMsg[i]);
+         new_word.speak();
+        $('.smile').slideUp(300).delay(350).slideDown(300);
+
+   }
+ }
   
 
 $(document).ready(function() {
- 
-     janet.add_word('Welcome'); 
-     janet.speak();
-janet.add_word('to');
-     janet.speak();
-janet.add_word('the');
-     janet.speak();
+  scared_look();
+  welcome_msg();
 
-janet.add_word('Scary');
-     janet.speak();
-janet.add_word('Cave');
-     janet.speak();
+  console.log('page is loading after document ready');
+  $("#form1").hide();
+  $("#drop-box").hide();
+          
+  var paragraphs = $('.content').find('p');
+  $.each(paragraphs, function(){
+  		var p = $(this);
+    	var text = p.text().trim();
 
-     janet.add_word('This');
-     janet.speak();
- janet.add_word('story');
-     janet.speak();
- janet.add_word('has');
-     janet.speak();
-  janet.add_word('words');
-     janet.speak();
- janet.add_word('with');
-     janet.speak();
-
-
- janet.add_word('the');
-     janet.speak();
- janet.add_word('long');
-     janet.speak();
-janet.add_word('a');
-     janet.speak();
-janet.add_word('sound');
-     janet.speak();
-janet.add_word('with');
-     janet.speak();
-janet.add_word('a');
- 
-janet.add_word('at');
-     janet.speak();
-janet.add_word('the');
-     janet.speak();
-janet.add_word('beginning');
-  janet.speak();
-janet.add_word('and');
-     janet.speak();
-janet.add_word('e');
-     janet.speak();
-janet.add_word('at');
-     janet.speak();
-janet.add_word('the');
-     janet.speak();
-janet.add_word('end');
-
-
-   //janet.add_word('Welcome to the Scary Cave');
-   janet.speak();
-    console.log('page is loading after document ready');
-      $("#form1").hide();
-      $("#drop-box").hide();
-     
-    
-    
-     	var paragraphs = $('.content').find('p');
-    	$.each(paragraphs, function(){
-    		var p = $(this);
-    		var text = p.text().trim();
-
-    		console.log(text);
+    	console.log(text);
     	
-	    	var newText = text.replace(/([^ |^\n]+)([ |\n|]+|$)/gi, " $1");
-	    	var textArr = newText.split(" ");
+	   	var newText = text.replace(/([^ |^\n]+)([ |\n|]+|$)/gi, " $1");
+	   	var textArr = newText.split(" ");
 
-	    	console.log("textArr : ", textArr);
+	    console.log("textArr : ", textArr);
 
-	    	var newTextElements = '<span class="txt-con"> '
+	    var newTextElements = '<span class="txt-con"> '
                   +textArr.join('</span><span class="txt-con"> ')+'</span>';
 
-	    	p.html(newTextElements);
-    	});
+	    p.html(newTextElements);
+  });
 
     	$('body').on('click', '.txt-con', function(){
             //console.log("insdie body onclidk");
     		var elm = $(this);
     		var value = elm.html();
-        janet.add_word(value);
-        janet.speak();
+        new_word.add_word(value);
+        new_word.speak();
     		//console.log("you just clicked on : ", value);
         wordx =value;
     	});   
@@ -168,11 +159,7 @@ janet.add_word('end');
                    }
     });     
 
- 
-
-
-
-            });  
+ });  
 
 
 
