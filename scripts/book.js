@@ -7,12 +7,15 @@ function book1() {
 var wordx = ''
 
 function speaker_object(){
+   console.log('2222222222 in speaker_object');
   this.word_queue = [];
   this.utterance = null;
   this.add_word = function(word){
+
     //add word to the word queue
     this.word_queue.push(word);
     console.log('added word ',word);
+      console.log('this.word_queue =" ', this.word_queue);
   }
   this.speak_next_word = function(){
     //perform the speech of the first word in the word_queue
@@ -20,15 +23,17 @@ function speaker_object(){
       return;
     }
     var word = this.word_queue.shift();
-    console.log("saying ",word);
+ 
     this.utterance = new SpeechSynthesisUtterance(word);
     var _this = this;
     this.utterance.onstart = function(event){
       _this.speak_next_word();
        //$('.smile').toggle( "fast", "swing", 1000 );
-       $('.smile').slideUp(300).delay(300).slideDown(300);
+       /*$('.smile').slideUp(300).delay(300).slideDown(300);
+        console.log('ttttttttt', 'after .smile after utterance'); */
     }
     window.speechSynthesis.speak(this.utterance);
+
   }
   this.speak = function(){
     this.speak_next_word();
@@ -69,19 +74,24 @@ function scared_look(){
 
  
 function welcome_msg() {
-  var welcomeMsg = ["well","come","to","the","scare","e","cave","this","store","e","has",
-                    "words","with","the","long","a","sound","with","a",
-                    "at","the","be","gin","ning","and","e","at","the","end", "of","a","word",
-                    "ex","am","ples","of","the","long","a","sound","cake","rake","bake","made"];
+  console.log('1111111111 in welcome_msg');
+  var welcomeMsg =[]
+     welcomeMsg = ["welcome","to","the","scary","cave","this","story","has","words","with","the",
+                    "long","a","sound","with","a","at","the","beginning","and","e","at","the","end", 
+                    "of","a","word","examples","of","the","long","a","sound", "cake","rake","bake","made"];
  
   var i;
-   for (i = 0; i < welcomeMsg.length; i++) {
-         new_word.add_word(welcomeMsg[i]);
-         new_word.speak();
-        $('.smile').slideUp(300).delay(350).slideDown(300);
+   var test = welcomeMsg.length;
+   for (i = 0; i <39; i++) {
+        new_word.add_word(welcomeMsg[i]);
+        new_word.speak();
+        if(i <= 28){
+              $('.smile').slideUp(300).delay(350).slideDown(300);
+        }; 
+      
+   };
 
-   }
- }
+ };
   
 
 $(document).ready(function() {
@@ -243,29 +253,10 @@ $('.scared').on('click', function () {
 $('.scared').on('click', function () {
     //$('.smile').slideUp(1000).delay(1000).slideDown(1000);
      $('.smile').slideToggle(); 
+      console.log("seeeeeeeeeeeeeeesssssssmile" );
      
      
-    })
-
-
-
-
-
-
-
-
-
-
-
-
-
-
+    });
 
 
  });  
-
-            
- 
-
- 
-
