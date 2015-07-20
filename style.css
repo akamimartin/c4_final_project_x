@@ -170,10 +170,16 @@ i{
  
 
  .questions {
-     float:right;
-     background-color: blue;
-     color: white;
-     height:545px;
+  float: right;
+  border: 2px solid purple;
+  margin-right: 111px;
+  margin-top: -99px;
+  background-color: white;
+  border-radius: 25px;
+  height: 628px;
+  width: 400px;
+  font-size: 16px;
+  color: magenta;
 
 
  }
@@ -199,10 +205,7 @@ i{
  }
 
 
-#form1 {
-   margin-top: 220px;
-
-}
+ 
 
 #drop-box {
   margin-left: -100px;

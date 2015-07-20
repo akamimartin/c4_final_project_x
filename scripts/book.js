@@ -67,22 +67,53 @@ function scared_look(){
         top: '14',
         left: '16'
     });
+     $('.pup').animate({
+        'height': '30',
+        'width': '30',
+        top: '8',
+        left: '10'
+    }, 500).delay(1000).animate({
+        'height': '20',
+        'width': '20',
+        top: '10',
+        left: '10'
+    });
+   $('.pup').animate({
+        'height': '30',
+        'width': '30',
+        top: '10',
+        left: '28'
+    }, 500).delay(1000).animate({
+        'height': '20',
+        'width': '20',
+        top: '14',
+        left: '16'
+    });
+
+
+
+
+
+
+
+
+
+
    
 };
 
 
-
- 
+         
 function welcome_msg() {
   console.log('1111111111 in welcome_msg');
   var welcomeMsg =[]
-     welcomeMsg = ["welcome","to","the","scary","cave","this","story","has","words","with","the",
-                    "long","a","sound","with","a","at","the","beginning","and","e","at","the","end", 
-                    "of","a","word","examples","of","the","long","a","sound", "cake","rake","bake","made"];
+     welcomeMsg = ["welcome","to","the","scary","cave","this","story","has","words","with", 
+                     "the long","a","sound","with","a","at","the","beginning","and","e","at","the end", 
+                    "of","a","word","examples","of","the long","a","sound", "cake","rake","bake","made"];
  
   var i;
    var test = welcomeMsg.length;
-   for (i = 0; i <39; i++) {
+   for (i = 0; i < test; i++) {
         new_word.add_word(welcomeMsg[i]);
         new_word.speak();
         if(i <= 28){
