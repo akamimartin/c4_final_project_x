@@ -41,6 +41,44 @@ function speaker_object(){
 }
 var new_word = new speaker_object();
 
+
+function change_pic (){
+  $.ajax({
+    url: 'page2.html',
+    method: 'POST',
+    dataType: 'html',
+    success: function(response){
+      console.log(response)
+      $('#container').html(response);
+    }
+  })
+}
+
+function change_form2 (){
+  $.ajax({
+    url: 'form2.html',
+    method: 'POST',
+    dataType: 'html',
+    success: function(response){
+      console.log("AAAAAAAAAAAAAAAAAin success")
+      console.log(response)
+      $('.questions').html(response);
+    }
+  })
+}
+
+
+
+
+
+
+
+
+
+
+
+
+
 function scared_look(){
  $('.lidT').animate({
         top: '-120'
@@ -91,14 +129,6 @@ function scared_look(){
     });
 
 
-
-
-
-
-
-
-
-
    
 };
 
@@ -126,15 +156,39 @@ function welcome_msg() {
   
 
 $(document).ready(function() {
-  scared_look();
-  welcome_msg();
+    scared_look();
+    welcome_msg();
+    $('body').on('click','#form_button',function(){
+       $("#form1").hide();
+       $("#drop-box").hide();
+       change_pic();
+      
+     })
 
-  console.log('page is loading after document ready');
-  $("#form1").hide();
-  $("#drop-box").hide();
+     $('body').on('click','#arrow_button2',function(){
+      console.log("SSSSSSSSSSSSSSSSSSSSin thearrow2");
+     
+        $('.form_container1').addClass('questions'); 
+        change_form2();
+     })
+
+
+ /*$('body').on('click','#form_button2',function(){
+       $("#form1").hide();
+       $("#drop-box").hide();
+       change_pic();
+      
+     }) */
+
+
+
+
+    console.log('page is loading after document ready');
+    $("#form1").hide();
+    $("#drop-box").hide();
           
-  var paragraphs = $('.content').find('p');
-  $.each(paragraphs, function(){
+    var paragraphs = $('.content').find('p');
+    $.each(paragraphs, function(){
   		var p = $(this);
     	var text = p.text().trim();
 
@@ -167,26 +221,7 @@ $(document).ready(function() {
                  $('.form_container1').addClass('questions'); 
                    //console.log("inside the arrow onclick");
                  $("#drop-box").show();
-                // $('.box-container1').addClass('page1-box'); 
-                // $('.face_container').addClass('add_face');
-            
-               
-               // $(".add_face").fadeIn(3000);
-              //$(".add_face").fadeOut(3000);
-
-              /*   $('span').draggable({
-                    helper: 'clone',
-                    stop: function(event, ui){
-                      console.log("ui =",ui.helper[0]);
-                      var new_element = $(ui.helper[0]).cl
-                      one();
-                      $("#drop-box").append(new_element);
-                    },
-                  });
-                  
-                 $('#drop-box').droppable({
-                  //helper: 'clone'
-                 }) */
+             
  
                var html = "<h1>In transit</h1>";
                $('span').draggable({
@@ -198,9 +233,19 @@ $(document).ready(function() {
                   $(ui.draggable).clone().appendTo(this);
             //$(ui.draggable).remove();
                    }
-    });     
+              });     
 
- });  
+           });  
+   
+
+
+
+
+
+
+
+
+
 
 
 

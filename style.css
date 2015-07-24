@@ -24,7 +24,7 @@
        color: inherit;
    }
 
-
+  
 
 
 #title1 {
@@ -161,9 +161,9 @@ i{
    color: white; 
    font-family: "Trebuchet MS", Helvetica, sans-serif; 
    font-size: 20px;
-   width: 100px;
-   height: 50px;
-   background-color: green;
+   width: 90px;
+   height: 48px;
+   background-color: blue;
    border-radius: 15px;
 
 }
@@ -178,8 +178,8 @@ i{
   border-radius: 25px;
   height: 628px;
   width: 400px;
-  font-size: 16px;
-  color: magenta;
+  font-size: 18px;
+  color: magenta;5
 
 
  }
@@ -191,21 +191,22 @@ i{
       background-color:#32cd32;
       color: white;
       font-family: "Trebuchet MS", Helvetica, sans-serif;
-      border-radius: 16%; 
+      border-radius: 16px; 
  }
 
-  .form_button {
-      margin-top: -185px;
-      margin-right: 1px;
-      height: 35px;
-      background-color:#32cd32;
-      color: white;
-      font-family: "Trebuchet MS", Helvetica, sans-serif;
-      border-radius: 16%; 
+ #form_button, #form2_button {
+   margin-top:  -40px;
+   margin-right: -11px;
+   background-color: #32cd32; 
+   color: white; 
+   font-family: "Trebuchet MS", Helvetica, sans-serif; 
+   font-size: 20px;
+   width: 90px;
+   height: 48px;
+   background-color: blue;
+   border-radius: 15px; 
  }
 
-
- 
 
 #drop-box {
   margin-left: -100px;
