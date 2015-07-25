@@ -2,7 +2,7 @@
  <?php
  require('mysql_connect_config.php');
 
-$sql = "SELECT * FROM users Where name = 'Janet'";
+$sql = "SELECT * FROM user Where name = 'Janet'";
 $result = mysqli_query($conn, $sql);
 $output = mysqli_fetch_assoc($result);
 print_r($output);
