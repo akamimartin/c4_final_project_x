@@ -54,7 +54,7 @@ function change_pic (){
   })
 }
 
-function change_form2 (){
+function show_form2 (){
   $.ajax({
     url: 'form2.html',
     method: 'POST',
@@ -62,7 +62,8 @@ function change_form2 (){
     success: function(response){
       console.log("AAAAAAAAAAAAAAAAAin success")
       console.log(response)
-      $('.questions').html(response);
+      $('#form1').show();
+      $('#form1').html(response);
     }
   })
 }
@@ -167,8 +168,8 @@ $(document).ready(function() {
 
      $('body').on('click','#arrow_button2',function(){
       console.log("SSSSSSSSSSSSSSSSSSSSin thearrow2");
-     
-        $('.form_container1').addClass('questions'); 
+     show_form2();
+        $('#form1').addClass('questions'); 
         change_form2();
      })
 
