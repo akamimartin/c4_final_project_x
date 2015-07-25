@@ -1,6 +1,6 @@
  
  <?php
- require('mysql_connect.php');
+ require('mysql_connect_config.php');
 
 $sql = "SELECT * FROM users Where name = 'Janet'";
 $result = mysqli_query($conn, $sql);
