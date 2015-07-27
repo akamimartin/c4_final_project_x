@@ -1,8 +1,7 @@
- 
- <?php
+  <?php
  require('mysql_connect_config.php');
-
-$sql = "SELECT * FROM user Where name = 'Janet'";
+ $sql = "SELECT * FROM user Where name = 'Mike'";  
+  
 $result = mysqli_query($conn, $sql);
 $output = mysqli_fetch_assoc($result);
 print_r($output);
@@ -21,4 +20,4 @@ print_r($output);
       return $output;
 } */
 
-?>
+?> 
