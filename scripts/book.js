@@ -137,17 +137,17 @@ function scared_look(){
          
 function welcome_msg() {
   console.log('1111111111 in welcome_msg');
-  var welcomeMsg =[]
-     welcomeMsg = ["welcome","to","the","scary","cave","this","story","has","words","with", 
-                     "the long","a","sound","with","a","at","the","beginning","and","e","at","the end", 
-                    "of","a","word","examples","of","the long","a","sound", "cake","rake","bake","made"];
+  var welcomeMsg =[],
+     welcomeMsg = ["welcome","to", "the","scary","cave","this story","uses","words",  "with", "A",
+                     "and", "ends", "with", "E", "examples" , "are",
+                       "cake","rake","bake","made"];
  
   var i;
    var test = welcomeMsg.length;
    for (i = 0; i < test; i++) {
         new_word.add_word(welcomeMsg[i]);
         new_word.speak();
-        if(i <= 28){
+        if(i <= 16){
               $('.smile').slideUp(300).delay(350).slideDown(300);
         }; 
       
@@ -221,6 +221,16 @@ $(document).ready(function() {
                  $("#form1").show();
                  $('.form_container1').addClass('questions'); 
                    //console.log("inside the arrow onclick");
+                   $('#form1 input').on('change', function() {
+                      console.log('sssssssssssssinside of form1')
+                      $test = $('input[name="form1-1"]:checked', '#form1').val(); 
+                      console.log(  $test);
+                      /*if($test == 'map') {
+                        console.log("this is a map" , $test);
+                      } */
+                   });
+
+
                  $("#drop-box").show();
              
  

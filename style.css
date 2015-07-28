@@ -36,6 +36,17 @@
      margin-top: -200px;
       }
 
+#title2 {
+    text-align: center;
+    margin-left: -160px;
+    color: turquoise;
+    font-family: "Trebuchet MS", Helvetica, sans-serif; 
+    font-size: 30px;
+    margin-top: -20px;
+    
+    
+      }
+
  #book_button1{
    margin-top: 20px;
    float:left;
