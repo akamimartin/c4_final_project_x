@@ -1,3 +1,3 @@
 <?php
-$conn = mysqli_connect('localhost', 'root', 'Snuggleslsm1210', 'test');
+$conn = mysqli_connect('localhost', 'root', 's', 'test');
 ?>
