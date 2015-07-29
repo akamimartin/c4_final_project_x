@@ -1,10 +1,41 @@
-  <?php
+ <?php
+ error_reporting(0);
  require('mysql_connect_config.php');
- $sql = "SELECT * FROM user Where name = 'Mike'";  
-  
-$result = mysqli_query($conn, $sql);
-$output = mysqli_fetch_assoc($result);
-print_r($output);
+ $sql = "SELECT * FROM answers Where form = $form ";  
+  $newarray = [];
+if($result = mysqli_query($conn, $sql)){
+   if($count=$result->num_rows) {
+       echo '<p>', $count, '</p>'; 
+          
+       while($row = $result->fetch_object()){
+           echo $row->answer , '<br>';
+           $newarray[] = $row->answer;
+    
+      }
+
+   }
+
+}
+     print_r($newarray);
+
+
+
+ 
+    if ($_GET['ip']):
+        $ip = gethostbyname($_GET['ip']);
+        echo($ip);
+    endif;  
+ 
+
+
+
+
+
+
+
+
+
+ 
   /*$this->db = $db;
 
  public function box($colour) {

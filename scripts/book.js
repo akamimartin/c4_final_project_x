@@ -216,19 +216,34 @@ $(document).ready(function() {
         wordx =value;
     	});   
  
-            $('#arrow_button1').on('click',  function(){
-              //$('.form_container1').removeClass('.hide_form1'); 
-                 $("#form1").show();
-                 $('.form_container1').addClass('questions'); 
-                   //console.log("inside the arrow onclick");
-                   $('#form1 input').on('change', function() {
-                      console.log('sssssssssssssinside of form1')
-                      $test = $('input[name="form1-1"]:checked', '#form1').val(); 
-                      console.log(  $test);
-                      /*if($test == 'map') {
-                        console.log("this is a map" , $test);
-                      } */
-                   });
+      $('#arrow_button1').on('click',  function(){
+        //$('.form_container1').removeClass('.hide_form1'); 
+           $("#form1").show();
+           $('.form_container1').addClass('questions'); 
+             //console.log("inside the arrow onclick");
+             $('#form1 input').on('change', function() {
+                   console.log('sssssssssssssinside of form1')
+                   $test = $('input[name="form1-1"]:checked', '#form1').val(); 
+                   console.log(  $test);
+                    
+                    $form = 1;
+                        $.ajax({
+                            type: "GET",
+                            url: "classes.php",
+                            data: 'ip=' + $form,
+                            success: function(msg){
+                                $('#resultform').html(msg);
+                                console.log('jjjjjj', msg);
+                            }
+
+                        }); // Ajax Call
+                    }); //event handler
+                }); //document.ready
+
+                /*if($test == 'map') {
+                  console.log("this is a map" , $test);
+                } */
+             });
 
 
                  $("#drop-box").show();
