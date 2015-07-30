@@ -162,7 +162,16 @@ $(document).ready(function() {
     $('body').on('click','#form_button',function(){
        $("#form1").hide();
        $("#drop-box").hide();
-       change_pic();
+       // change_pic();
+       $.ajax({
+                            type: "POST",
+                            url: "classes.php",
+                            success: function(msg){
+                                //$('#resultform').html(msg);
+                                console.log(msg);
+                            }
+
+                        });
       
      })
 
@@ -227,16 +236,7 @@ $(document).ready(function() {
                    console.log(  $test);
                     
                     $form = 1;
-                        $.ajax({
-                            type: "GET",
-                            url: "classes.php",
-                            data: 'ip=' + $form,
-                            success: function(msg){
-                                $('#resultform').html(msg);
-                                console.log('jjjjjj', msg);
-                            }
-
-                        }); // Ajax Call
+                         // Ajax Call
                     }); //event handler
                 }); //document.ready
 
@@ -261,19 +261,7 @@ $(document).ready(function() {
                    }
               });     
 
-           });  
-   
-
-
-
-
-
-
-
-
-
-
-
+  
 
 
 //$(".face_container").fadeOut(3000);
@@ -360,5 +348,4 @@ $('.scared').on('click', function () {
      
     });
 
-
- });  
+  

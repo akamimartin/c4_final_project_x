@@ -1,54 +1,26 @@
  <?php
- error_reporting(0);
+ // error_reporting(0);
  require('mysql_connect_config.php');
- $sql = "SELECT * FROM answers Where form = $form ";  
+ $sql = "SELECT * FROM answers Where form = '1' ";  
   $newarray = [];
-if($result = mysqli_query($conn, $sql)){
-   if($count=$result->num_rows) {
-       echo '<p>', $count, '</p>'; 
+  $result = mysqli_query($conn, $sql);
+  if($result){
+while ($row = mysqli_fetch_assoc($result)) {
+ $all =$row['answer'];
+ $output = json_encode($all);
+  print_r($output);
+  }
+
+     
+   // if($count=$result->num_rows) {
+   //     echo '<p>', $count, '</p>'; 
           
-       while($row = $result->fetch_object()){
-           echo $row->answer , '<br>';
-           $newarray[] = $row->answer;
-    
-      }
+      //  while($row = mysqli_fetch_assoc($result)){
+      //      $all= $row; 
+      // }
+
 
    }
-
-}
-     print_r($newarray);
-
-
-
- 
-    if ($_GET['ip']):
-        $ip = gethostbyname($_GET['ip']);
-        echo($ip);
-    endif;  
- 
-
-
-
-
-
-
-
-
-
- 
-  /*$this->db = $db;
-
- public function box($colour) {
-     $output = "";
-    $stmt = $this->db->prepare('SELECT * FROM mini_game_results where box = :colour');
-    $stmt->bindParam(':colour', $colour);
-    $stmt->execute();
-
-    while($row = $stmt->fetch(PDO::FETCH_ASSOC))  {
-      $output .= "\t\t\t<div id='".$row["id"]."'>". $row["name"].
-       "</div>\n";
-    }
-      return $output;
-} */
+    
 
 ?> 
