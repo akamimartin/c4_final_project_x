@@ -163,15 +163,41 @@ $(document).ready(function() {
        $("#form1").hide();
        $("#drop-box").hide();
        // change_pic();
+        var newarray = [];
        $.ajax({
-                            type: "POST",
-                            url: "classes.php",
-                            success: function(msg){
-                                //$('#resultform').html(msg);
-                                console.log(msg);
-                            }
-
-                        });
+               type: "POST",
+               url: "classes.php",
+               success: function(msg){
+                 //$('#resultform').html(msg);
+                  console.log('aaaaaajaxxxx', msg);
+                  var textArr1 = msg.replace('""', '","');
+                  
+                   textArr1 = textArr1.replace('""', '","');
+                 
+                   textArr1 = textArr1.replace('""', '","');
+                  
+                   textArr1 = textArr1.replace('""', '","'); 
+                                 
+                   textArr1 = textArr1.replace('""', '","');
+                   
+                   textArr1 = textArr1.replace('""', '","');
+                  textArr1 = textArr1.replace('" ', ''); 
+                   textArr1 = textArr1.replace(' "', ''); 
+                  
+                  var res = textArr1.split('","');
+                   newarray.push(textArr1);
+ 
+                  console.log('bbbbbbbbb newarray', newarray);
+                   console.log('ccccccc res', res);
+                    console.log('ccccccc newarray[0]', res[0]);
+                   console.log('ccccccc newarray[1]', res[1]);
+                      console.log('ccccccc res[2]', res[2]);
+                    console.log('ccccccc newarray[3]', res[3]);
+                      console.log('ccccccc res[4]', res[4]);
+                       console.log('ccccccc newarray[5]', res[5]);
+                      console.log('ccccccc res[6]', res[6]);
+               }
+        });
       
      })
 

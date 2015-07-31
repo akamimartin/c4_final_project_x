@@ -5,10 +5,11 @@
   $newarray = [];
   $result = mysqli_query($conn, $sql);
   if($result){
-while ($row = mysqli_fetch_assoc($result)) {
- $all =$row['answer'];
- $output = json_encode($all);
-  print_r($output);
+     while ($row = mysqli_fetch_assoc($result)) {
+        $newarray =$row['answer'];
+        $output = json_encode($newarray);
+      
+        print_r($output);
   }
 
      
