@@ -69,17 +69,6 @@ function show_form2 (){
 }
 
 
-
-
-
-
-
-
-
-
-
-
-
 function scared_look(){
  $('.lidT').animate({
         top: '-120'
@@ -160,10 +149,11 @@ $(document).ready(function() {
     scared_look();
     welcome_msg();
     $('body').on('click','#form_button',function(){
-       $("#form1").hide();
-       $("#drop-box").hide();
+       //$("#form1").hide();
+       //$("#drop-box").hide();
        // change_pic();
         var newarray = [];
+        //This ajax call gets the answers from the answers table
        $.ajax({
                type: "POST",
                url: "classes.php",
@@ -184,22 +174,61 @@ $(document).ready(function() {
                   textArr1 = textArr1.replace('" ', ''); 
                    textArr1 = textArr1.replace(' "', ''); 
                   
-                  var res = textArr1.split('","');
-                   newarray.push(textArr1);
+                  var newarray = textArr1.split('","');
+                  // newarray.push(textArr1);
  
                   console.log('bbbbbbbbb newarray', newarray);
-                   console.log('ccccccc res', res);
-                    console.log('ccccccc newarray[0]', res[0]);
-                   console.log('ccccccc newarray[1]', res[1]);
-                      console.log('ccccccc res[2]', res[2]);
-                    console.log('ccccccc newarray[3]', res[3]);
-                      console.log('ccccccc res[4]', res[4]);
-                       console.log('ccccccc newarray[5]', res[5]);
-                      console.log('ccccccc res[6]', res[6]);
-               }
-        });
+                   
+                    console.log('ccccccc newarray[0]', newarray[0]);
+                   console.log('ccccccc newarray[1]', newarray[1]);
+                      console.log('ccccccc newarray[2]', newarray[2]);
+                    console.log('ccccccc newarray[3]', newarray[3]);
+                      console.log('ccccccc newarray[4]', newarray[4]);
+                       console.log('ccccccc newarray[5]', newarray[5]);
+                      console.log('ccccccc newarray[6]', newarray[6]);
+                         var answer1 ="";
+       var answer=[];
+       var forma = 'form1-';
+
       
-     })
+answer[0] = $('input[name="form1-0"]:checked', '#form1').val(); 
+answer[1] = $('input[name="form1-1"]:checked', '#form1').val(); 
+answer[2] = $('input[name="form1-2"]:checked', '#form1').val(); 
+answer[3] = $('input[name="form1-3"]:checked', '#form1').val(); 
+answer[4] = $('input[name="form1-4"]:checked', '#form1').val(); 
+answer[5] = $('input[name="form1-5"]:checked', '#form1').val(); 
+answer[6] = $('input[name="form1-6"]:checked', '#form1').val(); 
+
+console.log('aaaaaaaaaaaaaa0', answer[0]);
+console.log('aaaaaaaaaaaaaa1', answer[1]);
+console.log('aaaaaaaaaaaaaa2', answer[2]);
+console.log('aaaaaaaaaaaaaa3', answer[3]);
+console.log('aaaaaaaaaaaaaa4', answer[4]);
+console.log('aaaaaaaaaaaaaa5', answer[5]);
+console.log('aaaaaaaaaaaaaa6', answer[6]);
+ 
+           /*loops through the form answers for form1 and does a comparison with 
+             what the user enters and displays message next to the question.  */ 
+              for(var i=0; i <= 7; i++) {
+                  if(newarray[i] == answer[i]){
+                    console.log('do they match', newarray, answer);
+                    forma  = '#form1-' + i;
+                    console.log('fodddddd',forma);
+                     $(forma).append("Good Job!");
+
+                   }else{
+
+                      console.log("after the else");
+                     forma  = '#form1-' + i;
+                    $(forma).append("Please try again");
+                   }
+               } 
+ 
+
+           }
+    });
+  
+ })
 
      $('body').on('click','#arrow_button2',function(){
       console.log("SSSSSSSSSSSSSSSSSSSSin thearrow2");
@@ -250,7 +279,8 @@ $(document).ready(function() {
     		//console.log("you just clicked on : ", value);
         wordx =value;
     	});   
- 
+    
+
       $('#arrow_button1').on('click',  function(){
         //$('.form_container1').removeClass('.hide_form1'); 
            $("#form1").show();
@@ -258,8 +288,8 @@ $(document).ready(function() {
              //console.log("inside the arrow onclick");
              $('#form1 input').on('change', function() {
                    console.log('sssssssssssssinside of form1')
-                   $test = $('input[name="form1-1"]:checked', '#form1').val(); 
-                   console.log(  $test);
+                     
+ 
                     
                     $form = 1;
                          // Ajax Call
