@@ -7,7 +7,6 @@ function book1() {
 var wordx = ''
 
 function speaker_object(){
-   console.log('2222222222 in speaker_object');
   this.word_queue = [];
   this.utterance = null;
   this.add_word = function(word){
