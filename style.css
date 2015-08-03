@@ -33,12 +33,12 @@
     color: #32cd32;
      font-family: "Trebuchet MS", Helvetica, sans-serif; 
      font-size: 60px;
-     margin-top: -200px;
+     margin-top: -100px;
       }
 
 #title2 {
     text-align: center;
-    margin-left: -160px;
+    margin-left: - 60px;
     color: turquoise;
     font-family: "Trebuchet MS", Helvetica, sans-serif; 
     font-size: 30px;
@@ -165,7 +165,7 @@ i{
 
 .book1page {
   margin-top: -100px;
-  margin-left: 120px;
+  margin-left: -5px;
   border: 2px solid blue;
   border-radius: 25px;
   height: 630px;
@@ -190,19 +190,29 @@ i{
  
 
  .questions {
-  float: right;
+  float: left;
   border: 2px solid purple;
-  margin-right: 111px;
+  margin-left:   30px;
   margin-top: -99px;
   background-color: white;
   border-radius: 25px;
   height: 628px;
-  width: 400px;
+  width:450px;
   font-size: 18px;
   color: magenta;5
 
+}
 
- }
+
+.form-comments1 {
+  display: none;
+}
+
+.form-comments2 {
+  display: show;
+}
+
+  
  
   .btn_answer1 {
       margin-top: -45px;
@@ -215,17 +225,27 @@ i{
  }
 
  #form_button, #form2_button {
-   margin-top:  -40px;
-   margin-right: -11px;
+   position: absolute;
+   margin-top:   -50px;
+   margin-left: 330px;
+
    background-color: #32cd32; 
    color: white; 
    font-family: "Trebuchet MS", Helvetica, sans-serif; 
    font-size: 20px;
-   width: 90px;
-   height: 48px;
+   width: 95px;
+   height: 45px;
    background-color: blue;
-   border-radius: 15px; 
+   border-radius: 13px; 
  }
+
+#form1-0 {
+   margin-top: 30px;
+}
+
+.formlabel {
+   line-height: 10%;
+}
 
 
 #drop-box {
@@ -338,11 +358,11 @@ body {
     margin: 0;
 }
 .catHolder {
-  margin-top: 10px;
+  margin-top: 70px;
     width: 300px;
     position: relative;
     top: -50px;
-    margin-left: 240px;
+    margin-left: 110px;
 } 
 #catHolder2 {
     width: 300px;
@@ -615,4 +635,10 @@ border-radius:  10px;
   color: turquoise;
   font-size: 20px;
   font-weight: bolder;
+}
+
+.test3 {
+  color: purple;
+
+
 }

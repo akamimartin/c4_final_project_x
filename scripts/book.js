@@ -59,7 +59,7 @@ function show_form2 (){
     url: 'form2.html',
     method: 'POST',
     dataType: 'html',
-    success: function(response){
+   success: function(msg){
       console.log("AAAAAAAAAAAAAAAAAin success")
       console.log(response)
       $('#form1').show();
@@ -146,6 +146,7 @@ function welcome_msg() {
   
 
 $(document).ready(function() {
+ 
     scared_look();
     welcome_msg();
     $('body').on('click','#form_button',function(){
@@ -188,7 +189,9 @@ $(document).ready(function() {
                       console.log('ccccccc newarray[6]', newarray[6]);
                          var answer1 ="";
        var answer=[];
-       var forma = 'form1-';
+       var forma;
+       var form_complete = 0;
+       var formc;
 
       
 answer[0] = $('input[name="form1-0"]:checked', '#form1').val(); 
@@ -206,22 +209,56 @@ console.log('aaaaaaaaaaaaaa3', answer[3]);
 console.log('aaaaaaaaaaaaaa4', answer[4]);
 console.log('aaaaaaaaaaaaaa5', answer[5]);
 console.log('aaaaaaaaaaaaaa6', answer[6]);
- 
+          form_complete = 0;
+          console.log("this is before the for loop")
+           $('.form-comments').html("");
+         
            /*loops through the form answers for form1 and does a comparison with 
              what the user enters and displays message next to the question.  */ 
-              for(var i=0; i <= 7; i++) {
+              for(var i=0; i <= 6; i++) {
+                console.log("this is after for", i);
                   if(newarray[i] == answer[i]){
-                    console.log('do they match', newarray, answer);
-                    forma  = '#form1-' + i;
-                    console.log('fodddddd',forma);
-                     $(forma).append("Good Job!");
+                      console.log("in if loop they do match", i);
+                      form_complete = i;
+                      console.log('aaaaa do they match', newarray, answer);
+                      forma  = '#form1-' + i;
+                      formc =  '#form-c1-' + i;
+                      console.log('bbbbbbbbb -forma',forma);
+                      console.log('cccccccc - formc',formc);
+                      console.log(' in the match formccccc',formc);
+                      $('.form-comments').show();
+                      $(formc).text('Good Job!');
+                     
+                      console.log('right after match .text')
 
-                   }else{
+                     // $(forma).append(" <br>  <span style=color:blue;margin-left:30px;>Good Job!</span></b>");
+                       //$(forma).replaceWith(" <br>  <span style=color:blue;margin-left:30px;>Good Job!</span></b>");
+                         console.log("before the form complete", form_complete);
+                          if(form_complete  >= 5) {
+                               console.log('zzzzzzzz', form_complete);
+                              // $("#form_button").html('Next'); 
+                                $("#form_button").prop('value', 'Next');
+                                 $('body').on('click','#form_button',function(){
+                                     $("#form1").hide();
+                                //$("#drop-box").hide();
+                                      change_pic();
+                                  });
 
-                      console.log("after the else");
-                     forma  = '#form1-' + i;
-                    $(forma).append("Please try again");
-                   }
+
+                          }else {
+                               form_complete = i;
+                           }                           
+                     }else{
+                         console.log('this is in the else', i);
+                         forma  = '#form1-' + i;
+                         formc =  '#form-c1-' + i; 
+                         console.log(' in the else formccccc',formc);
+                         $('.form-comments').show();
+                         $(formc).text('Try Again');
+                  
+                    // $(forma).append(" <br>  <span style=color:purple;margin-left:30px;>Try Again</span></b>");
+
+                   } 
                } 
  
 
@@ -232,9 +269,31 @@ console.log('aaaaaaaaaaaaaa6', answer[6]);
 
      $('body').on('click','#arrow_button2',function(){
       console.log("SSSSSSSSSSSSSSSSSSSSin thearrow2");
-     show_form2();
+      show_form2();
         $('#form1').addClass('questions'); 
-        change_form2();
+        
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+        
      })
 
 
@@ -285,15 +344,17 @@ console.log('aaaaaaaaaaaaaa6', answer[6]);
         //$('.form_container1').removeClass('.hide_form1'); 
            $("#form1").show();
            $('.form_container1').addClass('questions'); 
+           $('.form-comments').hide();
+             //$('.form-comments').addClass('form-comments1');
              //console.log("inside the arrow onclick");
-             $('#form1 input').on('change', function() {
+            /* $('#form1 input').on('change', function() {
                    console.log('sssssssssssssinside of form1')
                      
  
                     
                     $form = 1;
                          // Ajax Call
-                    }); //event handler
+                    }); //event handler */
                 }); //document.ready
 
                 /*if($test == 'map') {
