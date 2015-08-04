@@ -60,9 +60,9 @@ function show_form2 (){
     dataType: 'html',
    success: function(msg){
       console.log("AAAAAAAAAAAAAAAAAin success")
-      console.log(response)
+      console.log(msg)
       $('#form1').show();
-      $('#form1').html(response);
+      $('#form1').html(msg);
     }
   })
 }
@@ -117,14 +117,23 @@ function scared_look(){
         left: '16'
     });
 
+};
 
-   
+
+function story_titles() {
+  $('#book_button1').text('Scary Cave');
+  $('.book2').text('The Ghost Comes Back');
+  $('.book3').text('The Lost Treasure');
+  $('.book4').text('Underwater Cave');
+  $('.book5').text('The Haunted Lake');
+  $('.book6').text('The Stolen Bike');
+  $('.book7').text('Sam and John at it Again');
+  $('.book8').text('The Lost Tiger');
 };
 
 
          
 function welcome_msg() {
-  console.log('1111111111 in welcome_msg');
   var welcomeMsg =[],
      welcomeMsg = ["welcome","to", "the","scary","cave","this story","uses","words",  "with", "A",
                      "and", "ends", "with", "E", "examples" , "are",
@@ -145,7 +154,7 @@ function welcome_msg() {
   
 
 $(document).ready(function() {
- 
+    story_titles();
     scared_look();
     welcome_msg();
     $('body').on('click','#form_button',function(){
@@ -161,18 +170,13 @@ $(document).ready(function() {
                  //$('#resultform').html(msg);
                   console.log('aaaaaajaxxxx', msg);
                   var textArr1 = msg.replace('""', '","');
-                  
-                   textArr1 = textArr1.replace('""', '","');
-                 
-                   textArr1 = textArr1.replace('""', '","');
-                  
-                   textArr1 = textArr1.replace('""', '","'); 
-                                 
-                   textArr1 = textArr1.replace('""', '","');
-                   
-                   textArr1 = textArr1.replace('""', '","');
+                  textArr1 = textArr1.replace('""', '","');
+                  textArr1 = textArr1.replace('""', '","');
+                  textArr1 = textArr1.replace('""', '","'); 
+                  textArr1 = textArr1.replace('""', '","');
+                  textArr1 = textArr1.replace('""', '","');
                   textArr1 = textArr1.replace('" ', ''); 
-                   textArr1 = textArr1.replace(' "', ''); 
+                  textArr1 = textArr1.replace(' "', ''); 
                   
                   var newarray = textArr1.split('","');
                   // newarray.push(textArr1);
@@ -193,21 +197,14 @@ $(document).ready(function() {
        var formc;
 
       
-answer[0] = $('input[name="form1-0"]:checked', '#form1').val(); 
-answer[1] = $('input[name="form1-1"]:checked', '#form1').val(); 
-answer[2] = $('input[name="form1-2"]:checked', '#form1').val(); 
-answer[3] = $('input[name="form1-3"]:checked', '#form1').val(); 
-answer[4] = $('input[name="form1-4"]:checked', '#form1').val(); 
-answer[5] = $('input[name="form1-5"]:checked', '#form1').val(); 
-answer[6] = $('input[name="form1-6"]:checked', '#form1').val(); 
+  answer[0] = $('input[name="form1-0"]:checked', '#form1').val(); 
+  answer[1] = $('input[name="form1-1"]:checked', '#form1').val(); 
+  answer[2] = $('input[name="form1-2"]:checked', '#form1').val(); 
+  answer[3] = $('input[name="form1-3"]:checked', '#form1').val(); 
+  answer[4] = $('input[name="form1-4"]:checked', '#form1').val(); 
+  answer[5] = $('input[name="form1-5"]:checked', '#form1').val(); 
+  answer[6] = $('input[name="form1-6"]:checked', '#form1').val(); 
 
-console.log('aaaaaaaaaaaaaa0', answer[0]);
-console.log('aaaaaaaaaaaaaa1', answer[1]);
-console.log('aaaaaaaaaaaaaa2', answer[2]);
-console.log('aaaaaaaaaaaaaa3', answer[3]);
-console.log('aaaaaaaaaaaaaa4', answer[4]);
-console.log('aaaaaaaaaaaaaa5', answer[5]);
-console.log('aaaaaaaaaaaaaa6', answer[6]);
           form_complete = 0;
           console.log("this is before the for loop")
            $('.form-comments').html("");
@@ -254,9 +251,7 @@ console.log('aaaaaaaaaaaaaa6', answer[6]);
                          console.log(' in the else formccccc',formc);
                          $('.form-comments').show();
                          $(formc).text('Try Again');
-                  
-                    // $(forma).append(" <br>  <span style=color:purple;margin-left:30px;>Try Again</span></b>");
-
+                                   
                    } 
                } 
  
@@ -267,31 +262,8 @@ console.log('aaaaaaaaaaaaaa6', answer[6]);
  })
 
      $('body').on('click','#arrow_button2',function(){
-      console.log("SSSSSSSSSSSSSSSSSSSSin thearrow2");
-      show_form2();
+        show_form2();
         $('#form1').addClass('questions'); 
-        
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
         
      })
 
@@ -303,10 +275,6 @@ console.log('aaaaaaaaaaaaaa6', answer[6]);
       
      }) */
 
-
-
-
-    console.log('page is loading after document ready');
     $("#form1").hide();
     $("#drop-box").hide();
           
@@ -459,8 +427,7 @@ $('.scared').on('click', function () {
 $('.scared').on('click', function () {
     //$('.smile').slideUp(1000).delay(1000).slideDown(1000);
      $('.smile').slideToggle(); 
-      console.log("seeeeeeeeeeeeeeesssssssmile" );
-     
+   
      
     });
 
