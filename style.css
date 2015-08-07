@@ -48,12 +48,12 @@
     width: 127%;
     color: white;
       }
-#welcomeimg  {
+#pic  {
  
-    background-image: url('images/girl.jpg');
+    background-image: url('images/girl2.jpg');
     background-repeat: no-repeat;
-    background-attachment: fixed;
-    background-position: center; 
+    
+ 
  
 
 }
