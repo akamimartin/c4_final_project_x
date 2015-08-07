@@ -1,6 +1,6 @@
  .navbar-header {
   display: inline-block;
-  height: 65px;
+  height: 50px;
   width: 125%;
   margin-left: -170px;
   margin-top: -10px;
@@ -68,8 +68,8 @@
 
 .main-title {
     text-align: left;
-    margin-left: -175px;
-    width: 1490px;
+    margin-left: -60px;
+    width: 1240px;
      color:black;
      font-family: "Trebuchet MS", Helvetica, sans-serif; 
      font-size: 20px;
@@ -123,8 +123,8 @@
     
       }
  #book_button1{
-  border: 3px solid #616161;
-   margin-top: -30px;
+   border: 1.5px solid #616161;
+   margin-top: -15px;
    float:left;
    height: 200px;
    width: 200px;
@@ -138,8 +138,8 @@
  }
 
 .book2{
-   border: 3px solid #616161;
-   margin-top: -10px;
+   border: 1.5px solid #616161;
+   margin-top: 05px;
    margin-left: 40px;
    float: left;
    height: 200px;
@@ -153,8 +153,8 @@
 
 
 .book3{
-   border: 3px solid #616161;
-   margin-top: -10px;
+   border: 1.5px solid #616161;
+   margin-top: 05px;
    float: left;
    height: 200px;
    width: 200px;
@@ -167,8 +167,8 @@
  }  
 
   .book4{
-   border: 3px solid #616161;
-   margin-top: -10px;
+   border: 1.5px solid #616161;
+   margin-top: 05px;
    float: left;
    height: 200px;
    width: 200px;
