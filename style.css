@@ -10,13 +10,13 @@
 }
 
    .nav {
-    v
+  
        display: inline-block;
        width: 70%;
        position: absolute;
-       right:  -522px;
+       right:  -599px;
        text-align: right;
-       top: 1.1%;
+       top: -5.5px;
        color: white;
   }
 
@@ -42,27 +42,26 @@
  img {
     vertical-align: center;
     margin-left: -180px;
-    margin-top: -20px;
+    margin-top: -15px;
    
-    height: 600px;
+    height: 500px;
     width: 127%;
     color: white;
       }
-#pic  {
+
+/*#pic  {
  
     background-image: url('images/girl2.jpg');
     background-repeat: no-repeat;
-    
+    height: 40%;
  
- 
-
-}
+}  */
 #main-title {
     text-align: center;
      color:black;
      font-family: "Trebuchet MS", Helvetica, sans-serif; 
      font-size: 40px;
-     margin-top: -15px;
+     margin-top: 10px;
      margin-bottom: 30px;
     }
 
